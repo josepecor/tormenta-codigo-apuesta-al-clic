@@ -2,7 +2,6 @@
 
 ![tormenta-codigo](https://github.com/webreactiva-devs/tormenta-codigo-apuesta-al-clic/assets/1122071/599c4ff1-58b2-4990-b1b4-951313f54750)
 
-
 > 🎯 Propósito: Crea una web con algo que no hayas usado nunca 🆕
 
 Te cuento los requisitos y los trozos de código y plantilla que ya tienes disponibles para que sea aún más fácil.
@@ -26,8 +25,7 @@ Ejemplos:
 - 🅾️ Si estás a piñón con React prueba, por ejemplo, HTML+Alpine.js o HTMX
 - 📚 Si llevas años con JavaScript, lánzate al TypeScript
 - 🚀 Si quieres probar Vite o Bun, esta es tu oportunidad
-‎
-
+  ‎
 
 ## 🎲 Requisitos funcionales de Apuesta al clic
 
@@ -43,7 +41,8 @@ Esta es la propuesta de funcionalidad.
 **🎁 ¿Cuál es el premio si aciertas el número?**  
 Échale un poco de “imagifnación“ o “calambrazo” 😛
 
-### 🌟 Requisitos extra (no obligatorios, pero hay gente muy “viciosa”)  
+### 🌟 Requisitos extra (no obligatorios, pero hay gente muy “viciosa”)
+
 - 🔒 Estaría bien que el número aleatorio no fuera conocido por el cliente antes de apostar (en el frontend no hay secretos)
 - 🏆 Sería genial que no se pudiera acceder a la pantalla del premio sin haber acertado antes
 - ⏩ Reseteo del sistema
@@ -58,8 +57,6 @@ Esta es la propuesta de funcionalidad.
 
 Inténtalo y saldrás de dudas...
 
-
-
 ‎
 
 ## 👩‍💻 ¿Cómo participas en el reto?
@@ -67,7 +64,7 @@ Inténtalo y saldrás de dudas...
 > ✉️ Cuando tengas la solución, añades una issue en este repositorio y nos cuentas lo que has hecho y cuáles han sido tus principales aprendizajes y dificultades, ¡a la comunidad le encantará saberlo!
 
 1️⃣ Hay que compartir el código.  
-2️⃣ Puedes hacer un fork de este repositorio y trabajar sobre él.  
+2️⃣ Puedes hacer un fork de este repositorio y trabajar sobre él.
 
 ‎
 
@@ -79,7 +76,6 @@ Inténtalo y saldrás de dudas...
 Sí, el 21 de Septiembre si se presentan soluciones ;)
 
 ## 🛠️ ¿Qué vas a aprender en este reto?
-
 
 ### 1. Gestionar el tiempo
 
@@ -95,7 +91,7 @@ Un framework entero, una librería, un stack o, quien sabe, ¡el propio JavaScri
 - El número de la apuesta (las veces que has hecho clic)
 - La comprobación de la apuesta
 - El cambio en la pantalla
-‎
+  ‎
 
 ## 📁 Plantillas
 
@@ -104,9 +100,24 @@ Para hacértelo aún más fácil en la carpeta `plantillas` tienes:
 1. El HTML con el CSS de la web en `index.html`
 2. El código para generar el número aleatorio en `randomNumber.js`
 
-
 ## 🤗 Mecenazgo
 
 Este reto se realiza por y para la [Comunidad Malandriner](https://webreactiva.com/comunidad)
 
 ❤️
+
+## Incialización y arranque del repositorio
+
+Para realizar la instalacion es necesatio tener instalado Node.
+
+Para inicializarlo ejecutar el comando
+
+```bash
+npm install
+```
+
+Para arrancarlo
+
+```bash
+npm run dev
+```

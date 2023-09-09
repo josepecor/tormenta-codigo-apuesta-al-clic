@@ -9,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
             <img src="ganador.png">
         </div>
         <div>
-				<a id="lnkGame" class="btn btn-grey" href="/game">Volver a Jugar</a>
+				<a id="lnkGame" class="btn btn-grey" href="/">Volver a Jugar</a>
 		</div>
     </main>
 </Layout>
@@ -18,7 +18,7 @@ if (document.cookie.includes('gameWin=true')) {
     // Mostrar contenido de la página
     document.cookie = "gameWin=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 } else {
-    window.location.href = "/game";
+    window.location.href = "/";
 }
 
 </script>

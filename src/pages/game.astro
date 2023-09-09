@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+
+---
+
+<Layout title="Apuesta al Click">
+    <main>
+		<astro-game>
+
+			<span class="info">Debes de acertar un número de entre el 0 y el 10</span>
+			<!-- Contador de clics -->
+			<div class="counter">
+				Clics: <span id="counter">0</span>
+			</div>
+			
+			<section id="sectionGame">
+
+			<!-- Botón rojo grande y redondo -->
+			<button id="btnIncrement" class="red-button">Clic</button>
+
+			<hr />
+
+			<!-- Botón para hacer la apuesta con emojis -->
+			<button id="btnBet" class="bet-button">🎲 Apuesta 🎲</button>
+			
+			</section>
+			<section id="sectionFailed" class="hidden">
+				<label id="lblBetLost">No has acertado, vuelve a jugar</label><br/>
+				<button id="btnReload" class="btn btn-grey">Recargar</button>
+			</section>
+			
+		</div>
+		</astro-game>
+
+		<a id="lnkWin" class="hidden" href="/award">ir a pagina de win</a>
+    </main>
+</Layout>
+
+<script>
+  // Define the behaviour for our new type of HTML element.
+  class AstroGame extends HTMLElement {
+
+	constructor() {
+      super();
+	  let randomNumber:number = this.getRandom();
+	  let count = 0;
+	  
+	  const counter = this.querySelector('#counter');
+
+	  const btnIncrement = this.querySelector('#btnIncrement');
+      const btnBet = this.querySelector('#btnBet');
+	  const sectionGame = this.querySelector('#sectionGame');
+      const sectionFailed = this.querySelector('#sectionFailed');
+	  
+	  btnIncrement.addEventListener('click', () => {
+        count++;
+		counter.textContent = count.toString();
+      });
+    	
+	  btnBet.addEventListener('click', () => {
+        if(count === randomNumber){
+			document.cookie = "gameWin=true; path=/";
+			document.getElementById("lnkWin").click()
+			//window.location.href = '/award';
+		}	
+		else{
+			sectionFailed.classList.remove("hidden");
+			sectionGame.classList.add("hidden");
+		}
+			
+      });
+
+	  btnReload.addEventListener('click', () => {
+        count = 0;
+		randomNumber = this.getRandom();
+		counter.textContent = count.toString();
+		sectionFailed.classList.add("hidden");
+		sectionGame.classList.remove("hidden");
+      });
+	}
+	getRandom(){
+		return Math.floor(Math.random() * 11);
+	}
+  }
+  	
+  // Tell the browser to use our AstroHeart class for <astro-heart> elements.
+  customElements.define('astro-game', AstroGame);
+</script>
+
+<style>
+	.info{
+		position: relative;
+		top: -20px;
+		font-size: 1rem;
+	}
+	div{
+		padding-top: 10px;
+	}
+	#lblBetLost{
+		color: red;
+		font-size: x-large;
+	}
+	.hidden{
+		display: none;
+	}
+</style>

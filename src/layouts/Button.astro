@@ -1,0 +1,70 @@
+--- 
+import { ViewTransitions } from 'astro:transitions';
+
+
+
+interface Props {
+	id: string;
+    type: string;
+    Element?: string;
+    href?: string;
+}
+
+const { id, type, Element='button', href } = Astro.props;
+
+
+---
+
+
+<Element {id} class:list={['btn', 
+    { 'bet-button': type=="bet" },
+    { 'red-button': type=="click" },
+    { 'btn-grey': type=="reload" || type=="return" }
+
+]} {href}>
+    <slot />
+</Element>
+<style>
+    .btn{
+        padding: 15px 30px;
+        font-size: 1.5rem;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    .btn-grey{
+		color: #000;
+		background-color: grey;
+		border-color: grey;
+	}
+  /* Estilo para el botón rojo */
+    .red-button {
+      background-color: red;
+      color: white;
+      padding: 20px;
+      border-radius: 50%; /* Hace el botón redondo */
+      font-size: 1.5rem;
+      transition: transform 0.3s ease, background-color 0.3s ease; /* Transición suave */
+    }
+
+    /* Efecto hover para el botón rojo */
+    .red-button:hover {
+      background-color: darkred;
+      color: yellow;
+      transform: scale(1.5); /* Escala el botón */
+    }
+    /* Estilo para el botón de apuesta */
+    .bet-button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .bet-button:hover {
+      background-color: darkgreen;
+    }
+    .bet-button::before,.bet-button::after{
+        content: ' 🎲 ';
+    }
+</style>

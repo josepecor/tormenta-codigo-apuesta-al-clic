@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import Button from '../layouts/Button.astro';
 
 ---
 
@@ -14,20 +14,21 @@ import Layout from '../layouts/Layout.astro';
 				Clics: <span id="counter">0</span>
 			</div>
 			
-			<section id="sectionGame">
+			
 
 			<!-- Botón rojo grande y redondo -->
-			<button id="btnIncrement" class="red-button">Clic</button>
-
+			<Button id="btnIncrement" type="click">Clic</Button>
+<section id="sectionGame">
 			<hr />
 
 			<!-- Botón para hacer la apuesta con emojis -->
-			<button id="btnBet" class="bet-button">🎲 Apuesta 🎲</button>
+			<Button id="btnBet" type="bet">Apuesta</Button>
 			
 			</section>
 			<section id="sectionFailed" class="hidden">
-				<label id="lblBetLost">No has acertado, vuelve a jugar</label><br/>
-				<button id="btnReload" class="btn btn-grey">Recargar</button>
+				<label id="lblBetLost">No has acertado, vuelve a jugar</label>
+				<br/><br/>
+				<Button id="btnReload" type="reload">Recargar</Button>
 			</section>
 			
 		</div>
